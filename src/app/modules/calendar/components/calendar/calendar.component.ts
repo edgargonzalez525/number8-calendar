@@ -59,7 +59,7 @@ export class CalendarComponent implements OnInit {
 
       const monthName = moment(week.days[0].value).format('MMMM');
 
-      if (month.title === monthName || firstWeek) {
+      if (month.title === monthName) {
         month.weeks.push(week);
       }
 

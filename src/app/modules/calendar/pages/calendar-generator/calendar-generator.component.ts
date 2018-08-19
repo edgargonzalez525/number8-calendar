@@ -1,5 +1,5 @@
 import { ApplicationRef, Component, ComponentFactoryResolver, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ComponentPortal, DomPortalHost } from '@angular/cdk/portal';
 import { CalendarComponent } from '../../components/calendar/calendar.component';
 
@@ -59,9 +59,9 @@ export class CalendarGeneratorComponent implements OnInit {
 
   private createForm() {
     this.form = this.fb.group({
-      startDate: null,
-      numberDays: 1,
-      countryCode: ''
+      startDate: [null, Validators.required],
+      numberDays: [1, [Validators.required]],
+      countryCode: ['', Validators.required]
     });
   }
 }
