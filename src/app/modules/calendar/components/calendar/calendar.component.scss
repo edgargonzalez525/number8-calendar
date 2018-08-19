@@ -1,0 +1,36 @@
+.calendar-container {
+  max-width: 955px;
+  margin: 0 auto;
+}
+
+.month {
+  text-align: center;
+  color: #333;
+  border: solid 1px #ccc;
+}
+
+.day {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #666;
+  border: solid 1px #ccc;
+
+  &--title {
+    color: #999;
+  }
+
+  &--calendar {
+    background: #19bc19;
+    color: #fff;
+  }
+
+  &--weekend {
+    background: #f5f575;
+    color: #666;
+  }
+
+  &--disabled {
+    background: #ccc;
+  }
+}

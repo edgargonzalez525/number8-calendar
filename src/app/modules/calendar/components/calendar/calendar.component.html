@@ -1,0 +1,36 @@
+<div class="d-flex flex-wrap calendar-container">
+  <div *ngFor="let month of months; let last = last"
+       [class.mr-4]="!last"
+       class="mb-4">
+    <table>
+      <tbody>
+      <tr>
+        <td colspan="7"
+            class="month">
+          {{month.title}} {{month.year}}
+        </td>
+      </tr>
+      <tr>
+        <td class="day day--title">S</td>
+        <td class="day day--title">M</td>
+        <td class="day day--title">T</td>
+        <td class="day day--title">W</td>
+        <td class="day day--title">T</td>
+        <td class="day day--title">F</td>
+        <td class="day day--title">S</td>
+      </tr>
+      <tr *ngFor="let week of month.weeks">
+        <td *ngFor="let day of week.days"
+            class="day day--calendar"
+            [class.day--disabled]="!day.enabled"
+            [class.day--weekend]="day.weekend">
+          <ng-container *ngIf="day.enabled">
+            {{day.value | date:'dd'}}
+          </ng-container>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
