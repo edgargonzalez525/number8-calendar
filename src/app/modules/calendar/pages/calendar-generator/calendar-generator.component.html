@@ -30,6 +30,7 @@
         <div class="form-group m-0">
           <label for="number-days">Number of Days</label>
           <input type="number"
+                 formControlName="numberDays"
                  id="number-days"
                  class="form-control"
                  placeholder="Number of Days">
@@ -41,7 +42,8 @@
       <div class="col">
         <div class="form-group m-0">
           <label for="country-code">Country Code</label>
-          <input type="number"
+          <input type="text"
+                 formControlName="countryCode"
                  id="country-code"
                  class="form-control"
                  placeholder="Country Code">
@@ -51,10 +53,16 @@
         </div>
       </div>
       <div class="col-auto d-flex align-items-center justify-content-center">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary"
+                (click)="generateCalendar()">
           Generate Calendar
         </button>
       </div>
     </div>
   </form>
+</div>
+
+<div class="p-5">
+  <div #calendarParent>
+  </div>
 </div>
