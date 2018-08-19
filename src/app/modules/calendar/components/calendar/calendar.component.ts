@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Month, Week } from '../../../../core/model/month';
 import * as moment from 'moment';
 import { Moment } from 'moment';
-
+import * as holiday from '@18f/us-federal-holidays';
+console.log(holiday)
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -42,6 +43,7 @@ export class CalendarComponent implements OnInit {
         week.days.push({
           value: currentDate.toDate(),
           weekend: [6, 7].indexOf(currentDate.isoWeekday()) !== -1,
+          holiday: holiday.isAHoliday(currentDate.toDate()),
           enabled: currentDate >= startDate && currentDate <= endDate && currentDate.format('MMMM') === month.title
         });
         currentDate.add(1, 'day');
@@ -96,6 +98,5 @@ export class CalendarComponent implements OnInit {
       firstWeek = false;
     }
     this.months = months;
-
   }
 }

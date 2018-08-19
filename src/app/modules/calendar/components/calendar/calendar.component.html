@@ -23,7 +23,8 @@
         <td *ngFor="let day of week.days"
             class="day day--calendar"
             [class.day--disabled]="!day.enabled"
-            [class.day--weekend]="day.weekend">
+            [class.day--weekend]="day.weekend"
+            [class.day--holiday]="day.holiday">
           <ng-container *ngIf="day.enabled">
             {{day.value | date:'dd'}}
           </ng-container>

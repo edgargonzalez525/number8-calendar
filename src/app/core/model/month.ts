@@ -2,6 +2,7 @@ export interface Day {
   value: Date;
   enabled: boolean;
   weekend: boolean;
+  holiday: boolean;
 }
 
 export interface Week {
